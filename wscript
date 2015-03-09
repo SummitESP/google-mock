@@ -18,9 +18,3 @@ GMOCK_SOURCE = [
     'src/gmock-all.cc'
 ]
 
-GMOCK_INCLUDE = [
-    './',
-    'include/',
-    '../google-test/'
-    '../google-test/include/'
-]
