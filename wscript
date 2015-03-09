@@ -1,15 +1,13 @@
+import sys
+import os
+sys.path.append(os.path.join('..', 'build-tools'))
+from shared_wscript import *
+
 def options(opt):
-    opt.load('compiler_cxx')
+    options_desktop(opt)
 
 def configure(conf):
-    conf.load('compiler_cxx')
-
-    if conf.env.CXX_NAME == 'msvc':
-        conf.env.append_value('CXXFLAGS', ['/EHsc'])
-
-    if conf.env.CXX_NAME == 'gcc':
-        conf.env.append_value('CXXFLAGS', ['-std=c++11'])
-        conf.env.append_value('LINKFLAGS', ['-pthread'])
+    configure_desktop(conf)
 
 def build(bld):
     bld.stlib(source=GMOCK_SOURCE,
